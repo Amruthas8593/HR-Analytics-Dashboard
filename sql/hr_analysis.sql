@@ -1,21 +1,25 @@
--- HR Analytics
-SELECT Department, COUNT(*) AS Employees, AVG(Attrition)*100 AS Attrition_Rate
+-- HR Analytics | MySQL 8+
+SELECT COUNT(*) AS employees,
+       ROUND(AVG(Attrition)*100,2) AS attrition_rate_pct,
+       ROUND(AVG(Salary),2) AS avg_salary,
+       ROUND(AVG(Performance_Rating),2) AS avg_performance
+FROM hr_employee_data;
+
+SELECT Department, COUNT(*) AS employees,
+       ROUND(AVG(Attrition)*100,2) AS attrition_rate_pct,
+       ROUND(AVG(Salary),2) AS avg_salary,
+       ROUND(AVG(Performance_Rating),2) AS avg_performance
 FROM hr_employee_data
 GROUP BY Department
-ORDER BY Attrition_Rate DESC;
+ORDER BY attrition_rate_pct DESC;
 
-SELECT Hire_Year, COUNT(*) AS Hires
+SELECT Overtime, COUNT(*) AS employees,
+       ROUND(AVG(Attrition)*100,2) AS attrition_rate_pct
+FROM hr_employee_data
+GROUP BY Overtime
+ORDER BY attrition_rate_pct DESC;
+
+SELECT Hire_Year, COUNT(*) AS hires
 FROM hr_employee_data
 GROUP BY Hire_Year
 ORDER BY Hire_Year;
-
-SELECT Overtime, AVG(Attrition)*100 AS Attrition_Rate
-FROM hr_employee_data
-GROUP BY Overtime;
-
-SELECT Department,
-       AVG(Salary) AS Avg_Salary,
-       AVG(Performance_Rating) AS Avg_Performance
-FROM hr_employee_data
-GROUP BY Department
-ORDER BY Avg_Performance DESC;
