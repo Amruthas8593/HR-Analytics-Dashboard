@@ -1,23 +1,9 @@
-# Power BI Dashboard Guide
+# Power BI build guide
 
-## KPI Cards
-- Attrition Rate
-- Employee Count
-- Average Salary
-- Average Performance Rating
+Import `data/hr_employee_data_18000.csv`. Use the Power Query steps, DAX measures and page specification in `powerbi/`.
 
-## Main Visuals
-- Attrition by Department
-- Hiring Trends by Year
-- Salary by Department
-- Performance Distribution
-- Demographic Breakdown
+Build a workforce overview with employee count, employees left, attrition rate and average salary. Add attrition analysis by department, tenure, overtime and salary band, plus hiring trends by year and performance distribution.
 
-## Slicers
-- Department
-- Overtime
-- Hire Year
-- Performance Rating
+Show group sizes with attrition rates and avoid causal claims. Reconcile headline measures against the source CSV.
 
-## Drill-through
-Create a department drill-through page showing employee count, attrition, average salary, performance and hiring trends for the selected department.
+A native Power BI `.pbix` file is not included; this repository provides the import query, measures and build instructions.
