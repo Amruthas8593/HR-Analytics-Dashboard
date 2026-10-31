@@ -1,0 +1,8 @@
+// Create these measures in the Employees table.
+Employee Count = DISTINCTCOUNT(Employees[Employee_ID])
+Employees Left = CALCULATE([Employee Count], Employees[Attrition] = 1)
+Current Employees = CALCULATE([Employee Count], Employees[Attrition] = 0)
+Attrition Rate % = DIVIDE([Employees Left], [Employee Count])
+Average Salary = AVERAGE(Employees[Salary])
+Average Performance Rating = AVERAGE(Employees[Performance_Rating])
+Average Tenure (Years) = AVERAGE(Employees[Tenure_Years])
